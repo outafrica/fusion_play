@@ -4,8 +4,12 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-import './bootstrap';
+require('./bootstrap');
+
 import { createApp } from 'vue';
+import router from './router.js';
+import common from './common.js';
+
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -15,8 +19,10 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+import Main from './components/main.vue';
+app.component('welcome', Main);
+app.mixin(common);
+app.use(router);
 
 /**
  * The following block of code may be used to automatically register your
