@@ -27,3 +27,6 @@ jobs:
 
       - name: Install Composer Dependencies
         run: composer install --no-dev --no-interaction --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Create Deployment Artifact
+        run: tar -czf fusion_play.tar.gz --exclude=*.git --exclude=node_modules *
