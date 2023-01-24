@@ -100,7 +100,6 @@ jobs:
         server: ${{ fromJson(needs.fusion-play.outputs.deployment-matrix) }}
     steps:
       - name: Run Before Hooks
-        name: Extract archive and create directories
         uses: appleboy/scp-action@master
         env: 
           GITHUB_SHA: ${{ github.sha }}
@@ -125,8 +124,7 @@ jobs:
       matrix:
         server: ${{ fromJson(needs.fusion-play.outputs.deployment-matrix) }}
     steps:
-      - name: Run Before Hooks
-        name: Extract archive and create directories
+      - name: Activate Release
         uses: appleboy/scp-action@master
         env: 
           GITHUB_SHA: ${{ github.sha }}
