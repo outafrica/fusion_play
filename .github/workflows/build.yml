@@ -75,7 +75,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ matrix.server.port }}
           source: ${{ github.sha }}.tar.gz
-          target: ${{ matrix.server.path }}/artifacts // /var/www/html/artifacts
+          target: ${{ matrix.server.path }}/artifacts
       
       - name: Extract archive and create directories
         uses: appleboy/scp-action@master
