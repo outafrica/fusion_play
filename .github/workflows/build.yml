@@ -21,8 +21,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 19.4.0
-          
-        name: Compile CSS & JavaScript Files
+
+      - name: Compile CSS & JavaScript Files
         run: |
           npm install
           npm run prod
