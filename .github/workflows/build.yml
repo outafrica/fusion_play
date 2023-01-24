@@ -15,6 +15,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Complile CSS & JavaScript
-        run: |
+        run:  |
           npm install
           npm run prod
