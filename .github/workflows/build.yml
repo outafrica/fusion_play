@@ -29,4 +29,12 @@ jobs:
         run: composer install --no-dev --no-interaction --no-progress --prefer-dist --optimize-autoloader
 
       - name: Create Deployment Artifact
-        run: tar -czf fusion_play.tar.gz --exclude=*.git --exclude=node_modules *
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: tar -czf "${ GITHUB_SHA }".tar.gz --exclude=*.git --exclude=node_modules *
+
+      - name: Store Artifact For Distribution
+        uses: action/upload-artifact@v2
+        with:
+          name: app-build
+          path: ${{ github.sha }}.tar.gz
