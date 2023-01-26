@@ -73,15 +73,34 @@
         </div>
 
         <!--Footer-->
-        <div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
-            <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; FusionPlay 2023</a>
+        <div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in grid grid-cols-3 gap-4">
+            <div class="text-center md:text-center">
+                <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; FusionPlay</a>
+            </div>
+            <div class="text-center md:text-center">
+                <a href="https://github.com/outafrica/fusion_play" target="_blank"
+                    class="inline-flex items-center rounded-lg text-sm md:text-sm">
+                    <img src="../../../../../public/images/github.png" class="h-6 pr-4 bounce-top-icons">
+                </a>
+            </div>
+            <div class="text-center md:text-center">
+                <p class="text-gray-500 no-underline hover:no-underline">{{ date }}</p>
+            </div>
+
         </div>
 
     </div>
 </template>
 
 <script>
+import dayjs from 'dayjs'
+
 export default {
+    data() {
+        return {
+            date: dayjs().year(),
+        }
+    },
     mounted() {
         console.log('Component mounted.')
     }
