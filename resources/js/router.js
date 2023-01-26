@@ -2,6 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import HomePage from './components/pages/home/home.vue'
+import Dashboard from './components/pages/home/dashboard.vue'
 import NotFoundPage from './components/pages/errors/not_found.vue'
 
 // create the routes to be loaded
@@ -10,6 +11,11 @@ const routes = [
         path: '/',
         component: HomePage,
         name: 'home'
+    },
+    {
+        path: '/dashboard',
+        component: Dashboard,
+        name: 'dashboard'
     },
     // will match everything and put it under `$route.params.pathMatch`
     {

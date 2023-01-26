@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SpotifyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// spotify routes resource
+Route::resource('/spotify-callback', SpotifyController::class);
 
 Route::get('/{pathMatch}', function () {
     return view('welcome');
