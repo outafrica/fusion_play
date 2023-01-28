@@ -58,10 +58,6 @@ class SpotifyController extends Controller
         // create session with the new details
         Session::put('user', $user_data);
 
-        $playlist = $this->getSpotifyPlaylists();
-
-        dd($playlist);
-
         return redirect('/dashboard');
     }
 
@@ -148,7 +144,7 @@ class SpotifyController extends Controller
             $data = $this->getSpotifyPlaylists();
             $playlist_data = array(
                 'user_id' => $user_id,
-                'playlists' => json_encode($data, true),
+                'playlists' => json_encode($data['items'], true),
             );
 
             // create user playlist data
@@ -156,6 +152,6 @@ class SpotifyController extends Controller
         }
 
         // return user playlists
-        return response()->json($data, 200);
+        return response()->json($data['items'], 200);
     }
 }
