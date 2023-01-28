@@ -143,7 +143,7 @@ trait SpotifyTrait
             CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_HTTPHEADER => array(
                 'Accept: application/json',
-                'Authorization: Bearer ' . $user['toke']
+                'Authorization: Bearer ' . $user['token']
             ),
         ));
 
