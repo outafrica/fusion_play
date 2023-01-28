@@ -156,9 +156,9 @@
                                     <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
                                 </div>
                             </td>
-                            <th scope="row" class="px-6 py-4 text-green-900 whitespace-nowrap dark:text-green">
+                            <td class="px-6 py-4 text-green-500 dak:text-green">
                                 {{ playlist.name }}
-                            </th>
+                            </td>
                             <td class="px-6 py-4 text-green-500 dak:text-green">
                                 {{ playlist.tracks.total }}
                             </td>
