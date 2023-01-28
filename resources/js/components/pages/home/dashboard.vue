@@ -138,19 +138,16 @@
                                 Playlist Name
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Share Count
+                                Tacks
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Spotify Link
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Apple Music Link
+                                Action
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr
-                            class="bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-600">
+                        <tr class="bg-white border-b dark:bg-neutral-800 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-600"
+                            v-for="playlist in spotifyPlaylist" :key="playlist.id">
                             <td class="w-4 p-4">
                                 <div class="flex items-center">
                                     <input id="checkbox-table-search-1" type="checkbox"
@@ -160,20 +157,21 @@
                             </td>
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Apple MacBook Pro 17"
+                                {{ playlist.name }}
                             </th>
                             <td class="px-6 py-4 text-green-500 dak:text-green">
-                                5
+                                {{ playlist.tracks.total }}
                             </td>
                             <td class="px-6 py-4">
-                                <a href="#"
-                                    class="font-medium text-cyan-600 dark:text-cyan-500 hover:underline hover:text-emerald-900">Get
-                                    Playlist</a>
-                            </td>
-                            <td class="px-6 py-4">
-                                <a href="#"
-                                    class="font-medium text-cyan-600 dark:text-cyan-500 hover:underline hover:text-red-900">Get
-                                    Playlist</a>
+                                <button @click="showAddForm" type="button"
+                                    class="text-green-700 bg-white hover:bg-green-100 border border-green-200 focus:ring-4 focus:outline-none focus:ring-green-100 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-green-600 dark:bg-green-700 dark:border-green-600 dark:text-white dark:hover:bg-green-500 mr-2 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round"
+                                            d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
+                                    </svg>
+                                    Share
+                                </button>
                             </td>
                         </tr>
                     </tbody>
@@ -358,6 +356,7 @@ export default {
             if (res.status == 200) {
 
                 // this.s('Playlist successfully loaded');
+                this.spotifyPlaylist = res.data;
                 return this.isShareForm = true;
 
             } else {
