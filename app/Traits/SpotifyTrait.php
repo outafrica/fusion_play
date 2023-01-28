@@ -44,7 +44,7 @@ trait SpotifyTrait
         // Decode the JSON response
         $result = json_decode($response, true);
 
-        Session::push('user_token', $result);
+        Session::put('user_token', $result);
 
         return $result['access_token'];
     }
