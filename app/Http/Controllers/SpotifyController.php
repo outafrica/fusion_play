@@ -56,7 +56,7 @@ class SpotifyController extends Controller
         }
 
         // create session with the new details
-        Session::push('user', $user_data);
+        Session::put('user', $user_data);
 
         return redirect('/dashboard');
     }
@@ -133,7 +133,6 @@ class SpotifyController extends Controller
 
         // get user details
         $user = Session::get('user');
-        dd($user);
         $user_id = User::where('spotify_user_id', $user['spotify_user_id'])->value('id');
         $data = array();
 
