@@ -13,16 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('all_playlists', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->email()->unique();
-            $table->string('spotify_user_id')->nullable();
-            $table->string('spotify_code')->nullable();
-            $table->string('spotify_state')->nullable();
-            $table->string('token_type')->nullable();
-            $table->string('token')->nullable();
-            $table->string('refresh_token')->nullable();
+            $table->foreignId('spotify_list_id')->nullable();
+            $table->foreignId('apple_music_list_id')->nullable();
+            $table->string('playlist_items');
+            $table->string('url');
+            $table->integer('sharecount')->default(0);
             $table->timestamps();
         });
     }
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('all_playlists');
     }
 };

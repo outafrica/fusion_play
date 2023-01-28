@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\UserPlaylist;
+use App\Traits\SpotifyTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class SpotifyController extends Controller
 {
+    use SpotifyTrait;
+
     /**
      * Display a listing of the resource.
      *
@@ -13,8 +19,48 @@ class SpotifyController extends Controller
      */
     public function index(Request $request)
     {
-        // to do - Create Session to Store code & state
-        // to do - Get token for session and store it for future use
+        //Get user code and state to generate token to be used for consecutive requests
+        $code = $request->code;
+        $state = $request->state;
+
+        // get user details i.e. user_id
+        $user = $this->getSpotifyUser($code);
+
+        // get token details
+        $user_token = Session::get('user_token');
+
+        // user data details
+        $user_data = array(
+            'name' => $user['display_name'],
+            'email' => $user['email'],
+            'spotify_user_id' => $user['id'],
+            'spotify_code' => $code,
+            'spotify_state' => $state,
+            'token_type' => $user_token['token_type'],
+            'token' => $user_token['access_token'],
+            'refresh_token' => $user_token['refresh_token']
+        );
+
+        // check if user exist with email exists
+        if (User::where('email', $user['email'])->exists) {
+            // update user token details
+            $data = array(
+                'spotify_code' => $code,
+                'spotify_state' => $state,
+                'token_type' => $user_token['token_type'],
+                'token' => $user_token['access_token'],
+                'refresh_token' => $user_token['refresh_token']
+            );
+
+            //update user record
+            User::where('email', $user['email'])->update($data);
+        } else {
+            // create new user
+            User::create($user_data);
+        }
+
+        // create session with the new details
+        Session::push('user', $user_data);
 
         return redirect('/dashboard');
     }
@@ -83,5 +129,33 @@ class SpotifyController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    // get user spotify playlists
+    public function getPlaylists()
+    {
+
+        // get user details
+        $user = Session::get('user');
+        $user_id = User::where('spotify_user_id', $user['spotify_user_id'])->value('id');
+        $data = array();
+
+        if (UserPlaylist::where('user_id', $user_id)->exists()) {
+            // get playlist from db
+            $data = json_decode(UserPlaylist::where('user_id', $user_id)->value('playlists'), true);
+        } else {
+            // get spotify playlists
+            $data = $this->getSpotifyPlaylists();
+            $playlist_data = array(
+                'user_id' => $user_id,
+                'playlists' => json_encode($data, true),
+            );
+
+            // create user playlist data
+            UserPlaylist::create($playlist_data);
+        }
+
+        // return user playlists
+        return response()->json($data, 200);
     }
 }
