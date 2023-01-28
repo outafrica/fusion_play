@@ -18,7 +18,7 @@ trait SpotifyTrait
         $callback = env('SPOTIFY_CALLBACK');
 
         // Build the data for the POST request
-        $data = array('grant_type' => 'authorization_code', 'code' => $code, 'redirect_uri' => $callback);
+        $data = json_encode(array('grant_type' => 'authorization_code', 'code' => $code, 'redirect_uri' => $callback), true);
 
         // Create a new cURL resource
         $ch = curl_init();
@@ -46,7 +46,7 @@ trait SpotifyTrait
 
         //  $data['access_token'];
         dd($result);
-        Session::push('user_token', $data);
+        Session::push('user_token', $result);
 
         return $result['access_token'];
     }
