@@ -39,7 +39,7 @@ class SpotifyController extends Controller
         );
 
         // check if user exist with email exists
-        if (User::where('name', $user['display_name'])->exists) {
+        if (User::where('name', $user['display_name'])->exists()) {
             // update user token details
             $data = array(
                 'spotify_code' => $code,
