@@ -28,8 +28,6 @@ class SpotifyController extends Controller
         // get token details
         $user_token = Session::get('user_token');
 
-        dd($user_token);
-
         // user data details
         $user_data = array(
             'name' => $user['display_name'],
