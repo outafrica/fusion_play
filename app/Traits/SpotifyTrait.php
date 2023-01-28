@@ -67,6 +67,7 @@ trait SpotifyTrait
         $curl_response = curl_exec($curl);
         $data = json_decode($curl_response, true);
 
+        dd($data);
         return $data;
     }
 
