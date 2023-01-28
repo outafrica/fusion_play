@@ -119,36 +119,18 @@ trait SpotifyTrait
         $url = 'api.spotify.com/v1/users/' . $user['spotify_user_id'] . '/playlists';
 
         $curl = curl_init();
-        // curl_setopt($curl, CURLOPT_URL, $url);
-        // curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json',  'Authorization: Bearer ' . $user['token'])); //setting custom header
-        // curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
-        // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json',  'Authorization: Bearer ' . $user['token'])); //setting custom header
+        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-        // $curl_response = curl_exec($curl);
+        $curl_response = curl_exec($curl);
 
-        // // Close cURL resource
-        // curl_close($curl);
-
-        // // $data = json_decode($curl_response, true);
-
-        // return $curl_response;
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'GET',
-            CURLOPT_HTTPHEADER => array(
-                'Content-Type: application/json',
-                'Authorization: Bearer ' . $token
-            ),
-        ));
-
-        $response = curl_exec($curl);
+        // Close cURL resource
         curl_close($curl);
-        return $response;
+
+        // $data = json_decode($curl_response, true);
+
+        return $curl_response;
     }
 }
