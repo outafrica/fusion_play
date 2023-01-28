@@ -133,6 +133,7 @@ class SpotifyController extends Controller
 
         // get user details
         $user = Session::get('user');
+        dd($user);
         $user_id = User::where('spotify_user_id', $user['spotify_user_id'])->value('id');
         $data = array();
 
