@@ -141,10 +141,11 @@ class SpotifyController extends Controller
             $data = json_decode(UserPlaylist::where('user_id', $user_id)->value('playlists'), true);
         } else {
             // get spotify playlists
-            $data = $this->getSpotifyPlaylists();
+            $playlist = $this->getSpotifyPlaylists();
+            $data = $playlist['items'];
             $playlist_data = array(
                 'user_id' => $user_id,
-                'playlists' => json_encode($data['items'], true),
+                'playlists' => json_encode($data, true),
             );
 
             // create user playlist data
@@ -152,6 +153,6 @@ class SpotifyController extends Controller
         }
 
         // return user playlists
-        return response()->json($data['items'], 200);
+        return response()->json($data, 200);
     }
 }
