@@ -38,7 +38,6 @@ class SpotifyController extends Controller
             'refresh_token' => $user_token['refresh_token']
         );
 
-        dd($user_data);
         // check if user exist with email exists
         if (User::where('name', $user['display_name'])->exists()) {
             // update user token details
@@ -59,7 +58,7 @@ class SpotifyController extends Controller
         // create session with the new details
         Session::put('user', $user_data);
 
-        $playlist = $this->getSpotifyPlaylists($user_token['access_token']);
+        $playlist = $this->getSpotifyPlaylists();
 
         dd($playlist);
 
@@ -146,7 +145,7 @@ class SpotifyController extends Controller
             $data = json_decode(UserPlaylist::where('user_id', $user_id)->value('playlists'), true);
         } else {
             // get spotify playlists
-            $data = $this->getSpotifyPlaylists($user['token']);
+            $data = $this->getSpotifyPlaylists();
             $playlist_data = array(
                 'user_id' => $user_id,
                 'playlists' => json_encode($data, true),
