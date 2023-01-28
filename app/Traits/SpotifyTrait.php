@@ -116,7 +116,7 @@ trait SpotifyTrait
         // Pass details to generate Spotify token
         $user = Session::get('user');
         // user url
-        $url = 'api.spotify.com/v1/users/' . $user['spotify_user_id'] . '/playlists';
+        $url = 'https://api.spotify.com/v1/users/' . $user['spotify_user_id'] . '/playlists';
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
