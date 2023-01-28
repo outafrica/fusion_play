@@ -18,7 +18,7 @@ trait SpotifyTrait
         $callback = env('SPOTIFY_CALLBACK');
 
         // Build the data for the POST request
-        $data = json_encode(array('grant_type' => 'authorization_code', 'code' => $code, 'redirect_uri' => $callback), true);
+        $data = 'grant_type=authorization_code&code=' . $code . '&redirect_uri=' . $callback;
 
         // Create a new cURL resource
         $ch = curl_init();
