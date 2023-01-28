@@ -355,17 +355,19 @@ export default {
             // implement async function to get active user's spotify playlist
             const res = await this.callApi('get', '/spotify/get_playlists');
 
-            if (res.status == 200) {
+            console.log(res);
 
-                this.s('Playlist successfully loaded');
-                console.log(res.data);
-                return this.isShareForm = true;
+            // if (res.status == 200) {
 
-            } else {
+            //     this.s('Playlist successfully loaded');
+            //     console.log(res.data);
+            //     return this.isShareForm = true;
 
-                this.d('Unable to load playlist. Try again later!');
+            // } else {
 
-            }
+            //     this.d('Unable to load playlist. Try again later!');
+
+            // }
 
         },
         showAddForm() {
