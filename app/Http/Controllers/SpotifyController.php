@@ -21,7 +21,7 @@ class SpotifyController extends Controller
     {
         //Get user code and state to generate token to be used for consecutive requests
         $code = $request->code;
-        $state = $request->state;
+        // $state = $request->state;
 
         // get user details i.e. user_id
         $user = $this->getSpotifyUser($code);
@@ -35,7 +35,7 @@ class SpotifyController extends Controller
             'email' => $user['email'],
             'spotify_user_id' => $user['id'],
             'spotify_code' => $code,
-            'spotify_state' => $state,
+            // 'spotify_state' => $state,
             'token_type' => $user_token['token_type'],
             'token' => $user_token['access_token'],
             'refresh_token' => $user_token['refresh_token']
@@ -46,7 +46,7 @@ class SpotifyController extends Controller
             // update user token details
             $data = array(
                 'spotify_code' => $code,
-                'spotify_state' => $state,
+                // 'spotify_state' => $state,
                 'token_type' => $user_token['token_type'],
                 'token' => $user_token['access_token'],
                 'refresh_token' => $user_token['refresh_token']
