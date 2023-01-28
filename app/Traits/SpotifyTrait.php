@@ -129,8 +129,8 @@ trait SpotifyTrait
         // Close cURL resource
         curl_close($curl);
 
-        // $data = json_decode($curl_response, true);
+        $data = json_decode($curl_response, true);
 
-        return $curl_response;
+        return $data;
     }
 }
