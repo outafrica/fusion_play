@@ -125,6 +125,10 @@ trait SpotifyTrait
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         $curl_response = curl_exec($curl);
+
+        // Close cURL resource
+        curl_close($curl);
+
         $data = json_decode($curl_response, true);
 
         return $data;
