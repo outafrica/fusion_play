@@ -176,6 +176,8 @@
                         </tr>
                     </tbody>
                 </table>
+                <paginate :page_count="20" :click-handler="doSomething" :prev-text="Prev" :next-text="Next"
+                    :container-class="pagination"></paginate>
             </div>
         </div>
         <div class="pt-20">
@@ -335,8 +337,12 @@
 </template>
 
 <script>
+import paginate from 'vuejs-paginate';
 
 export default {
+    components: {
+        paginate,
+    },
     data() {
         return {
             isShareForm: false,
@@ -376,6 +382,9 @@ export default {
 
             this.isAddForm = false;
             this.isShareForm = false;
+
+        },
+        doSomething() {
 
         }
     },
