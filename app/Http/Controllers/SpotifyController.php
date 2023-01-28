@@ -21,7 +21,6 @@ class SpotifyController extends Controller
     {
         //Get user code and state to generate token to be used for consecutive requests
         $code = $request->code;
-        // $state = $request->state;
 
         // get user details i.e. user_id
         $user = $this->getSpotifyUser($code);
@@ -32,28 +31,25 @@ class SpotifyController extends Controller
         // user data details
         $user_data = array(
             'name' => $user['display_name'],
-            'email' => $user['email'],
             'spotify_user_id' => $user['id'],
             'spotify_code' => $code,
-            // 'spotify_state' => $state,
             'token_type' => $user_token['token_type'],
             'token' => $user_token['access_token'],
             'refresh_token' => $user_token['refresh_token']
         );
 
         // check if user exist with email exists
-        if (User::where('email', $user['email'])->exists) {
+        if (User::where('name', $user['display_name'])->exists) {
             // update user token details
             $data = array(
                 'spotify_code' => $code,
-                // 'spotify_state' => $state,
                 'token_type' => $user_token['token_type'],
                 'token' => $user_token['access_token'],
                 'refresh_token' => $user_token['refresh_token']
             );
 
             //update user record
-            User::where('email', $user['email'])->update($data);
+            User::where('name', $user['display_name'])->update($data);
         } else {
             // create new user
             User::create($user_data);

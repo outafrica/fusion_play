@@ -19,7 +19,6 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
         'spotify_user_id',
         'spotify_code',
         'spotify_state',
