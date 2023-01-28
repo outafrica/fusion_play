@@ -58,6 +58,8 @@ class SpotifyController extends Controller
         // create session with the new details
         Session::put('user', $user_data);
 
+        dd($user_data);
+
         return redirect('/dashboard');
     }
 
