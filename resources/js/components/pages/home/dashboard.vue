@@ -32,9 +32,9 @@
                 <div class="flex items-center justify-between pb-4">
                     <div>
                         <button id="dropdownRadioButton" data-dropdown-toggle="dropdownRadio"
-                            class="inline-flex items-center green-500 bg-white border border-neutral-300 focus:outline-none hover:bg-neutral-100 focus:ring-4 focus:ring-neutral-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-neutral-800 dark:green dark:border-neutral-600 dark:hover:bg-neutral-700 dark:hover:border-neutral-600 dark:focus:ring-neutral-700"
+                            class="inline-flex items-center text-green-500 bg-white border border-neutral-300 focus:outline-none hover:bg-neutral-100 focus:ring-4 focus:ring-neutral-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-neutral-800 dark:text-green dark:border-neutral-600 dark:hover:bg-neutral-700 dark:hover:border-neutral-600 dark:focus:ring-neutral-700"
                             type="button">
-                            <svg class="w-4 h-4 mr-2 green-400" aria-hidden="true" fill="currentColor"
+                            <svg class="w-4 h-4 mr-2 text-green-400" aria-hidden="true" fill="currentColor"
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
@@ -53,15 +53,15 @@
                             class="z-10 hidden w-48 bg-white divide-y divide-neutral-100 rounded-lg shadow dark:bg-neutral-700 dark:divide-neutral-600"
                             data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top"
                             style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(522.5px, 3847.5px, 0px);">
-                            <ul class="p-3 space-y-1 text-sm green-700 dark:green-200"
+                            <ul class="p-3 space-y-1 text-sm text-green-700 dark:text-green-200"
                                 aria-labelledby="dropdownRadioButton">
                                 <li>
                                     <div
                                         class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
                                         <input id="filter-radio-example-1" type="radio" value="" name="filter-radio"
-                                            class="w-4 h-4 green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
+                                            class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                         <label for="filter-radio-example-1"
-                                            class="w-full ml-2 text-sm font-medium green-900 rounded dark:green-300">Last
+                                            class="w-full ml-2 text-sm font-medium text-green-900 rounded dark:text-green-300">Last
                                             day</label>
                                     </div>
                                 </li>
@@ -70,9 +70,9 @@
                                         class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
                                         <input checked="" id="filter-radio-example-2" type="radio" value=""
                                             name="filter-radio"
-                                            class="w-4 h-4 green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
+                                            class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                         <label for="filter-radio-example-2"
-                                            class="w-full ml-2 text-sm font-medium green-900 rounded dark:green-300">Last
+                                            class="w-full ml-2 text-sm font-medium text-green-900 rounded dark:text-green-300">Last
                                             7 days</label>
                                     </div>
                                 </li>
@@ -80,9 +80,9 @@
                                     <div
                                         class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
                                         <input id="filter-radio-example-3" type="radio" value="" name="filter-radio"
-                                            class="w-4 h-4 green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
+                                            class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                         <label for="filter-radio-example-3"
-                                            class="w-full ml-2 text-sm font-medium green-900 rounded dark:green-300">Last
+                                            class="w-full ml-2 text-sm font-medium text-green-900 rounded dark:text-green-300">Last
                                             30 days</label>
                                     </div>
                                 </li>
@@ -90,9 +90,9 @@
                                     <div
                                         class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
                                         <input id="filter-radio-example-4" type="radio" value="" name="filter-radio"
-                                            class="w-4 h-4 green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
+                                            class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                         <label for="filter-radio-example-4"
-                                            class="w-full ml-2 text-sm font-medium green-900 rounded dark:green-300">Last
+                                            class="w-full ml-2 text-sm font-medium text-green-900 rounded dark:text-green-300">Last
                                             month</label>
                                     </div>
                                 </li>
@@ -100,9 +100,9 @@
                                     <div
                                         class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
                                         <input id="filter-radio-example-5" type="radio" value="" name="filter-radio"
-                                            class="w-4 h-4 green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
+                                            class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                         <label for="filter-radio-example-5"
-                                            class="w-full ml-2 text-sm font-medium green-900 rounded dark:green-300">Last
+                                            class="w-full ml-2 text-sm font-medium text-green-900 rounded dark:text-green-300">Last
                                             year</label>
                                     </div>
                                 </li>
@@ -112,7 +112,7 @@
                     <label for="table-search" class="sr-only">Search</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                            <svg class="w-5 h-5 green-500 dark:green-400" aria-hidden="true" fill="currentColor"
+                            <svg class="w-5 h-5 text-green-500 dark:text-green-400" aria-hidden="true" fill="currentColor"
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
@@ -120,17 +120,17 @@
                             </svg>
                         </div>
                         <input type="text" id="table-search"
-                            class="block p-2 pl-10 text-sm dark:green-400 border border-neutral-300 rounded-lg w-80 bg-neutral-50 focus:ring-neutral-500 focus:border-neutral-500 dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:green-400 dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
+                            class="block p-2 pl-10 text-sm dark:text-green-400 border border-neutral-300 rounded-lg w-80 bg-neutral-50 focus:ring-neutral-500 focus:border-neutral-500 dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-green-400 dark:focus:ring-neutral-500 dark:focus:border-neutral-500"
                             placeholder="Search for playlist(s)">
                     </div>
                 </div>
-                <table class="w-full text-sm text-left green-500 dark:green-400">
-                    <thead class="text-xs green-700 uppercase bg-neutral-50 dark:bg-neutral-700 dark:green-400">
+                <table class="w-full text-sm text-left text-green-500 dark:text-green-400">
+                    <thead class="text-xs text-green-700 uppercase bg-neutral-50 dark:bg-neutral-700 dark:text-green-400">
                         <tr>
                             <th scope="col" class="p-4">
                                 <div class="flex items-center">
                                     <input id="checkbox-all-search" type="checkbox"
-                                        class="w-4 h-4 green-600 bg-neutral-100 border-neutral-300 rounded focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
+                                        class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 rounded focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                     <label for="checkbox-all-search" class="sr-only">checkbox</label>
                                 </div>
                             </th>
@@ -151,7 +151,7 @@
                             <td class="w-4 p-4">
                                 <div class="flex items-center">
                                     <input id="checkbox-table-search-1" type="checkbox"
-                                        class="w-4 h-4 green-600 bg-neutral-100 border-neutral-300 rounded focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
+                                        class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 rounded focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                     <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
                                 </div>
                             </td>
