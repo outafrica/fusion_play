@@ -120,7 +120,7 @@ trait SpotifyTrait
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json', 'Authorization: Bearer ' . $user['token'])); //setting custom header
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type:application/json',  'Authorization: Bearer ' . $user['token'])); //setting custom header
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
@@ -129,8 +129,8 @@ trait SpotifyTrait
         // Close cURL resource
         curl_close($curl);
 
-        $data = json_decode($curl_response, true);
+        // $data = json_decode($curl_response, true);
 
-        return $data;
+        return $curl_response;
     }
 }
