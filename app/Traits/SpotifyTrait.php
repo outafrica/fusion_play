@@ -111,7 +111,7 @@ trait SpotifyTrait
         return $data;
     }
 
-    function getSpotifyPlaylists()
+    function getSpotifyPlaylists($token)
     {
         // Pass details to generate Spotify token
         $user = Session::get('user');
@@ -143,7 +143,7 @@ trait SpotifyTrait
             CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_HTTPHEADER => array(
                 'Accept: application/json',
-                'Authorization: Bearer ' . $user['token']
+                'Authorization: Bearer ' . $token
             ),
         ));
 

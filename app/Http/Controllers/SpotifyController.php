@@ -58,7 +58,7 @@ class SpotifyController extends Controller
         // create session with the new details
         Session::put('user', $user_data);
 
-        $playlist = $this->getSpotifyPlaylists();
+        $playlist = $this->getSpotifyPlaylists($user_token['access_token']);
 
         dd($playlist);
 
@@ -145,7 +145,7 @@ class SpotifyController extends Controller
             $data = json_decode(UserPlaylist::where('user_id', $user_id)->value('playlists'), true);
         } else {
             // get spotify playlists
-            $data = $this->getSpotifyPlaylists();
+            $data = $this->getSpotifyPlaylists($user['token']);
             $playlist_data = array(
                 'user_id' => $user_id,
                 'playlists' => json_encode($data, true),
