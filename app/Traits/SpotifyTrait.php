@@ -42,12 +42,13 @@ trait SpotifyTrait
         curl_close($ch);
 
         // Decode the JSON response
-        $data = json_decode($response, true);
+        $result = json_decode($response, true);
 
         //  $data['access_token'];
+        dd($result);
         Session::push('user_token', $data);
 
-        return $data['access_token'];
+        return $result['access_token'];
     }
 
     /**
