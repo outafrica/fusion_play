@@ -1,6 +1,6 @@
 <template>
 
-    <div class="flex flex-col w-full xl:w-3/5 justify-center lg:items-start overflow-y-hidden">
+    <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
         <h1
             class="my-4 text-3xl md:text-3xl text-purple-800 font-bold leading-tight text-center md:text-center slide-in-bottom-h1">
             Share your favorite music playlist(s)</h1>
@@ -36,12 +36,19 @@
         </div>
 
     </div>
+    <!--Right Col-->
+    <div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
+    </div>
 
 </template>
 
 <script>
+import playlists from '../playlists/playlists.vue';
 
 export default {
+    components: {
+        playlists,
+    },
     data() {
         return {
             // save spotify authorization paramas
