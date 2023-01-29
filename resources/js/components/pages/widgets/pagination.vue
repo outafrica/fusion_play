@@ -1,6 +1,6 @@
 <template>
 
-    <div class="pt-10">
+    <div class="pt-10 content-center">
         <ul class="inline-flex items-center -space-x-px">
             <li>
                 <a href="#"
