@@ -25,7 +25,6 @@
     },
     "dependencies": {
         "dayjs": "^1.11.7",
-        "vue-router": "^4.1.6",
-        "vuejs-paginate": "^2.1.0"
+        "vue-router": "^4.1.6"
     }
 }

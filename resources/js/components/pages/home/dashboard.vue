@@ -176,8 +176,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <paginate :page_count="20" :click-handler="doSomething" :prev-text="Prev" :next-text="Next"
-                    :container-class="pagination"></paginate>
+                <paginate></paginate>
             </div>
         </div>
         <div class="pt-20">
@@ -337,7 +336,7 @@
 </template>
 
 <script>
-import paginate from 'vuejs-paginate';
+import paginate from '../widgets/pagination.vue';
 
 export default {
     components: {
