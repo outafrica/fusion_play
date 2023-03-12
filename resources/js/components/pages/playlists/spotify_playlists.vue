@@ -1,5 +1,4 @@
 <template>
-
     <div class="pt-20">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <div class="flex items-center justify-between pb-4">
@@ -7,15 +6,15 @@
                     <button id="dropdownRadioButton" data-dropdown-toggle="dropdownRadio"
                         class="inline-flex items-center text-green-500 bg-white border border-neutral-300 focus:outline-none hover:bg-neutral-100 focus:ring-4 focus:ring-neutral-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-neutral-800 dark:text-green dark:border-neutral-600 dark:hover:bg-neutral-700 dark:hover:border-neutral-600 dark:focus:ring-neutral-700"
                         type="button">
-                        <svg class="w-4 h-4 mr-2 text-green-400" aria-hidden="true" fill="currentColor"
-                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-4 h-4 mr-2 text-green-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
                                 clip-rule="evenodd"></path>
                         </svg>
                         Last 30 days
-                        <svg class="w-3 h-3 ml-2" aria-hidden="true" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="w-3 h-3 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
                             </path>
                         </svg>
@@ -28,8 +27,7 @@
                         <ul class="p-3 space-y-1 text-sm text-green-700 dark:text-green-200"
                             aria-labelledby="dropdownRadioButton">
                             <li>
-                                <div
-                                    class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
+                                <div class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
                                     <input id="filter-radio-example-1" type="radio" value="" name="filter-radio"
                                         class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                     <label for="filter-radio-example-1"
@@ -38,10 +36,8 @@
                                 </div>
                             </li>
                             <li>
-                                <div
-                                    class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
-                                    <input checked="" id="filter-radio-example-2" type="radio" value=""
-                                        name="filter-radio"
+                                <div class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
+                                    <input checked="" id="filter-radio-example-2" type="radio" value="" name="filter-radio"
                                         class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                     <label for="filter-radio-example-2"
                                         class="w-full ml-2 text-sm font-medium text-green-900 rounded dark:text-green-300">Last
@@ -49,8 +45,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div
-                                    class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
+                                <div class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
                                     <input id="filter-radio-example-3" type="radio" value="" name="filter-radio"
                                         class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                     <label for="filter-radio-example-3"
@@ -59,8 +54,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div
-                                    class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
+                                <div class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
                                     <input id="filter-radio-example-4" type="radio" value="" name="filter-radio"
                                         class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                     <label for="filter-radio-example-4"
@@ -69,8 +63,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div
-                                    class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
+                                <div class="flex items-center p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-600">
                                     <input id="filter-radio-example-5" type="radio" value="" name="filter-radio"
                                         class="w-4 h-4 text-green-600 bg-neutral-100 border-neutral-300 focus:ring-neutral-500 dark:focus:ring-neutral-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral-700 dark:border-neutral-600">
                                     <label for="filter-radio-example-5"
@@ -136,8 +129,8 @@
                         <td class="px-6 py-4">
                             <button @click="showAddForm" type="button"
                                 class="text-green-700 bg-white hover:bg-green-100 border border-green-200 focus:ring-4 focus:outline-none focus:ring-green-100 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-green-600 dark:bg-green-700 dark:border-green-600 dark:text-white dark:hover:bg-green-500 mr-2 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                                    stroke="currentColor" className="w-6 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round"
                                         d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z" />
                                 </svg>
@@ -150,12 +143,17 @@
             <paginate></paginate>
         </div>
     </div>
-
 </template>
 
 <script>
 
 export default {
+    props: {
+        spotifyPlaylist: {
+            required: true,
+            type: Object,
+        }
+    },
     data() {
         return {
 
