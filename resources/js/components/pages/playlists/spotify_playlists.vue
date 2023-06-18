@@ -164,6 +164,7 @@ export default {
         async sharePlaylist(playlist) {
 
             this.playlistID = playlist.id;
+            console.log(this.playlistID);
             // implement async function to get active user's spotify playlist
             const res = await this.callApi('post', '/spotify/create-fusion-playlist', this.playlistID);
 
