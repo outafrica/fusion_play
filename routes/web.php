@@ -21,7 +21,7 @@ Route::get('/', function () {
 // spotify routes resource
 Route::resource('/spotify-callback', SpotifyController::class);
 Route::get('/spotify/get_playlists', [SpotifyController::class, 'getPlaylists']);
-Route::post('/spotify/create-fusion- playlist', [SpotifyController::class, 'createFusionPlaylist']);
+Route::post('/spotify/create-fusion-playlist', [SpotifyController::class, 'createFusionPlaylist']);
 
 
 Route::get('/{pathMatch}', function () {
