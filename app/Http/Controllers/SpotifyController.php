@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\UserPlaylist;
 use App\Traits\SpotifyTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class SpotifyController extends Controller
@@ -154,5 +155,36 @@ class SpotifyController extends Controller
 
         // return user playlists
         return response()->json($data, 200);
+    }
+
+    function createFusionPlaylist(Request $request)
+    {
+
+        // Create a new cURL resource
+        $ch = curl_init();
+
+        // get spotify url
+        $url = env('SPOTIFY_API_URL');
+
+        // Extract the access token & token type from auth user
+        $access_token = Auth::user()->token;
+        $token_type = Auth::user()->token_type;
+
+        $get_playlist_url = $url . '/playlists/' . $request->playlistID;
+
+        // Use the access token in the Authorization header of your API requests
+        $headers = array('Authorization: ' . $token_type . $access_token);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $get_playlist_url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $response = curl_exec($ch);
+
+        if ($response === false) {
+            die('cURL error: ' . curl_error($ch));
+        }
+
+        curl_close($ch);
     }
 }

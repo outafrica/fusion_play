@@ -127,7 +127,7 @@
                             {{ playlist.tracks.total }}
                         </td>
                         <td class="px-6 py-4">
-                            <button @click="showAddForm" type="button"
+                            <button @click="sharePlaylist(playlist)" type="button"
                                 class="text-green-700 bg-white hover:bg-green-100 border border-green-200 focus:ring-4 focus:outline-none focus:ring-green-100 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-green-600 dark:bg-green-700 dark:border-green-600 dark:text-white dark:hover:bg-green-500 mr-2 mb-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                                     stroke="currentColor" className="w-6 h-6">
@@ -156,13 +156,26 @@ export default {
     },
     data() {
         return {
-
+            playlistID: ''
         }
     },
 
     methods: {
-        doSomething() {
+        async sharePlaylist(playlist) {
 
+            this.playlistID = playlist.id;
+            // implement async function to get active user's spotify playlist
+            const res = await this.callApi('post', '/spotify/create-fusion-playlist', this.playlistID);
+
+            if (res.status == 200) {
+
+                // this.s('Playlist successfully loaded');
+
+            } else {
+
+                // this.d('Unable to load playlist. Try again later!');
+
+            }
         }
     },
 }
