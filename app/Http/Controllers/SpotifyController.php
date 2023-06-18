@@ -166,8 +166,10 @@ class SpotifyController extends Controller
         $url = env('SPOTIFY_API_URL');
 
         // Extract the access token & token type from auth user
-        $access_token = Auth::user()->token;
-        $token_type = Auth::user()->token_type;
+        $id = Auth::user()->id;
+
+        $access_token = User::where('id', $id)->value('token');
+        $token_type = User::where('id', $id)->value('token_type');
 
         $get_playlist_url = $url . '/playlists/' . $request->id;
 
