@@ -169,7 +169,7 @@ class SpotifyController extends Controller
         $access_token = Auth::user()->token;
         $token_type = Auth::user()->token_type;
 
-        $get_playlist_url = $url . '/playlists/' . $request->playlistID;
+        $get_playlist_url = $url . '/playlists/' . $request->id;
 
         // Use the access token in the Authorization header of your API requests
         $headers = array('Authorization: ' . $token_type . ' ' . $access_token);
