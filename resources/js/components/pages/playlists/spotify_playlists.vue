@@ -156,17 +156,19 @@ export default {
     },
     data() {
         return {
-            playlistID: ''
+            playlist: {
+                id: '',
+            },
         }
     },
 
     methods: {
         async sharePlaylist(playlist) {
 
-            this.playlistID = playlist.id;
-            console.log(this.playlistID);
+            this.playlist.id = playlist.id;
+            console.log(this.playlist);
             // implement async function to get active user's spotify playlist
-            const res = await this.callApi('post', '/spotify/create-fusion-playlist', this.playlistID);
+            const res = await this.callApi('post', '/spotify/create-fusion-playlist', this.playlist);
 
             if (res.status == 200) {
 

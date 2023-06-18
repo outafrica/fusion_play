@@ -172,8 +172,7 @@ class SpotifyController extends Controller
         $get_playlist_url = $url . '/playlists/' . $request->playlistID;
 
         // Use the access token in the Authorization header of your API requests
-        $headers = array('Authorization: ' . $token_type . $access_token);
-        $ch = curl_init();
+        $headers = array('Authorization: ' . $token_type . ' ' . $access_token);
         curl_setopt($ch, CURLOPT_URL, $get_playlist_url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
