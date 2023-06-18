@@ -159,7 +159,6 @@ class SpotifyController extends Controller
 
     function createFusionPlaylist(Request $request)
     {
-
         // Create a new cURL resource
         $ch = curl_init();
 
