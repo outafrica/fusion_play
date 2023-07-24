@@ -3,7 +3,7 @@
     <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
         <h1
             class="my-4 text-3xl md:text-3xl text-purple-800 font-bold leading-tight text-center md:text-center slide-in-bottom-h1">
-            Share your favorite music(s)</h1>
+            Share your favorite music playlist(s)</h1>
         <p
             class="leading-normal not-italic hover:italic text-base md:text-l mb-8 text-left md:text-left slide-in-bottom-subtitle">
             Do you have that playlist(s) that your friends always ask for but can't share cause you use different
